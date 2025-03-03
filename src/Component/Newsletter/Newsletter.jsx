@@ -34,47 +34,47 @@ const Newsletter = () => {
   };
 
   return (
-    <div className='text-white bg-gradient-to-b from-gray-900 to-black p-6 md:p-10 sm:py-12 flex justify-center items-center min-h-screen'>
-      <div className='sm:max-w-lg w-full mx-auto text-sm sm:text-base rounded-2xl bg-gray-800 p-8 shadow-2xl border border-gray-700'>
-        <h1 className='text-3xl sm:text-4xl font-bold text-center mb-4 text-blue-400'>Subscribe to Our Newsletter</h1>
-        <p className='text-gray-300 text-center mb-6'>Stay updated with our latest news and exclusive offers.</p>
+    <div className='text-white bg-gradient-to-b from-gray-800 to-black p-4 md:p-8 sm:py-10'>
+      <div className='sm:max-w-lg mx-auto text-sm sm:text-base rounded-2xl my-10 bg-gray-900 p-6 shadow-lg'>
+        <h1 className='text-2xl sm:text-3xl font-semibold text-center mb-4'>Subscribe to our Newsletter</h1>
+        <p className='text-gray-400 text-center mb-6'>Stay updated with our latest news and updates.</p>
 
         {submitted && (
-          <div className='text-green-400 text-center mb-4 bg-green-900 p-3 rounded-lg'>Thank you for subscribing!</div>
+          <div className='text-green-400 text-center mb-4'>Thank you for subscribing!</div>
         )}
 
-        <form onSubmit={submitHandler} className='space-y-6'>
+        <form onSubmit={submitHandler} className='space-y-4'>
           <div className='flex flex-col'>
-            <label htmlFor='email' className='text-lg font-medium mb-2 text-gray-200'>Email Address</label>
+            <label htmlFor='email' className='text-lg font-medium mb-1'>Email</label>
             <input
               type='email'
               id='email'
               name='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className='text-black outline-none px-4 py-3 rounded-lg border border-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-400 transition-all duration-200'
+              className='text-black outline-none px-3 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
               placeholder='Enter your email'
             />
-            {errors.email && <p className='text-red-400 text-sm mt-2'>{errors.email}</p>}
+            {errors.email && <p className='text-red-400 text-sm mt-1'>{errors.email}</p>}
           </div>
 
-          <div className='flex items-center gap-3'>
+          <div className='flex items-center gap-2'>
             <input
               type='checkbox'
               id='subscribe'
               checked={isChecked}
               onChange={() => setIsChecked(!isChecked)}
-              className='w-6 h-6 cursor-pointer accent-blue-500 rounded-lg border-2 border-gray-500 focus:ring-2 focus:ring-blue-400'
+              className='w-5 h-5 cursor-pointer accent-blue-500'
             />
-            <label htmlFor='subscribe' className='text-gray-200 cursor-pointer text-lg'>Yes, subscribe me to your newsletter</label>
+            <label htmlFor='subscribe' className='cursor-pointer'>Yes, subscribe me to your newsletter</label>
           </div>
           {errors.checkbox && <p className='text-red-400 text-sm'>{errors.checkbox}</p>}
 
           <button
             type='submit'
-            className='bg-blue-500 hover:bg-blue-600 transition duration-300 text-white w-full py-3 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg'
+            className='bg-blue-500 hover:bg-blue-600 transition duration-200 text-white w-full py-3 rounded-full font-semibold'
           >
-            Subscribe Now
+            Subscribe
           </button>
         </form>
       </div>
