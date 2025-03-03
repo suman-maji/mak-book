@@ -29,6 +29,7 @@ const Newsletter = () => {
       setSubmitted(true);
       setEmail('');
       setIsChecked(false);
+      setErrors({});
     }
   };
 
@@ -71,8 +72,7 @@ const Newsletter = () => {
 
           <button
             type='submit'
-            className={`bg-blue-500 hover:bg-blue-600 transition duration-200 text-white w-full py-3 rounded-full font-semibold ${Object.keys(errors).length > 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
-            disabled={Object.keys(errors).length > 0}
+            className='bg-blue-500 hover:bg-blue-600 transition duration-200 text-white w-full py-3 rounded-full font-semibold'
           >
             Subscribe
           </button>
