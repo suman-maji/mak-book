@@ -14,21 +14,22 @@ const Fag = ({ elem }) => {
     };
 
     return (
-        <div className='sm:max-w-[70%] mx-auto p-4'>
-            <a href={elem[id]} className='block'>
-                <div 
-                    onClick={setPyq} 
-                    className='text-xl sm:text-2xl flex justify-between items-center group cursor-pointer rounded-2xl sm:rounded-full bg-gray-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-lg p-3 sm:p-6 sm:px-8 hover:scale-105 active:scale-95'
-                >
-                    <h2 className='group-hover:ml-4 duration-300 text-sm sm:text-2xl'>{elem.subject ? elem.subject : elem.Ques}</h2>
-                    <div className='sm:mr-5 group-hover:rotate-45 duration-300 text-2xl sm:text-5xl'>
+        <div className='sm:max-w-[70%] mx-auto p-6 flex flex-col items-center'>
+            <div 
+                onClick={setPyq} 
+                className='relative w-full max-w-2xl p-5 sm:p-8 bg-gradient-to-br from-gray-900 to-gray-800 shadow-xl rounded-3xl cursor-pointer transition-all duration-500 transform hover:scale-105 active:scale-95 hover:shadow-2xl'
+            >
+                <div className='absolute inset-0 bg-white opacity-5 blur-lg rounded-3xl'></div>
+                <div className='relative flex justify-between items-center'>
+                    <h2 className='text-lg sm:text-2xl text-white font-semibold drop-shadow-md'>{elem.subject ? elem.subject : elem.Ques}</h2>
+                    <div className={`text-3xl text-cyan-400 transition-transform duration-300 ${click ? 'rotate-90' : 'rotate-0'}`}>
                         <BsArrowRightCircle />
                     </div>
                 </div>
-            </a>
+            </div>
             
             <div 
-                className={`mx-2 sm:mx-8 mt-2 text-xs opacity-80 sm:text-xl overflow-hidden transition-all duration-500 ${click ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                className={`relative overflow-hidden transition-all duration-700 ease-in-out mt-4 w-full max-w-2xl bg-gray-800 text-white p-5 rounded-3xl shadow-xl ${click ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
             >
                 {elem.Ans ? elem.Ans : id === "pyq" ? <PyqCard pyqData={pyqData} /> : ""}
             </div>
