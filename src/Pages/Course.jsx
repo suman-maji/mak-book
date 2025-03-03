@@ -54,7 +54,7 @@ const Course = () => {
             
             <div>
                 <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Branch</h2>
-                <div className='grid grid-cols-3 gap-6 sm:gap-8'>
+                <div className='grid grid-cols-3 gap-10 sm:gap-12'>
                     {branchName.map((elem, index) => (
                         <div key={index} 
                              onClick={() => selectBranch(elem)} 
