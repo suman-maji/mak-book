@@ -4,73 +4,36 @@ import { useParams } from 'react-router-dom';
 import PyqCard from '../Common/PyqCard';
 
 const Fag = ({ elem }) => {
-  const [active, setActive] = useState(false);
-  const { id } = useParams();
-  const [data, setData] = useState([]);
-  
-  const toggleActive = () => {
-    setActive(prev => !prev);
-    if (!active) {
-      if (id === "pyq") {
-        setData(elem.pyqLink);
-      } else if (id === "organiser") {
-        setData(elem.organiserLink);
-      } else if (id === "lecture") {
-        setData(elem.lectureLink);
-      }
-    }
-  };
-  
-  return (
-    <div className="my-3 mx-auto w-full max-w-2xl">
-      <div className={`overflow-hidden rounded-xl shadow-lg transition-all duration-500 ${active ? 'bg-white' : 'bg-gradient-to-r from-blue-600 to-indigo-800'}`}>
-        {/* Card Header */}
-        <div 
-          onClick={toggleActive}
-          className="relative cursor-pointer"
-        >
-          <div className={`p-4 transition-all duration-300 ${active ? 'pb-0 border-b border-gray-100' : 'hover:bg-opacity-90'}`}>
-            <div className="flex justify-between items-center">
-              <h2 className={`font-bold text-lg transition-all duration-300 ${active ? 'text-indigo-900' : 'text-white'}`}>
-                {elem.subject ? elem.subject : elem.Ques}
-              </h2>
-              
-              <div className={`transition-all duration-500 ml-3 ${active ? 'rotate-90 text-indigo-600' : 'text-white'}`}>
-                <BsArrowRightCircle 
-                  className={`text-2xl transition-transform duration-300 ${active ? '' : 'hover:scale-110'}`}
-                />
-              </div>
-            </div>
+    const [click, setClick] = useState(false);
+    const { id } = useParams();
+    const [pyqData, setPyqData] = useState([]);
+
+    const setPyq = () => {
+        setClick(prev => !prev);
+        setPyqData(elem.pyqLink);
+    };
+
+    return (
+        <div className='sm:max-w-[70%] mx-auto p-4'>
+            <a href={elem[id]} className='block'>
+                <div 
+                    onClick={setPyq} 
+                    className='text-xl sm:text-2xl flex justify-between items-center group cursor-pointer rounded-2xl sm:rounded-full bg-gray-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-lg p-3 sm:p-6 sm:px-8 hover:scale-105 active:scale-95'
+                >
+                    <h2 className='group-hover:ml-4 duration-300 text-sm sm:text-2xl'>{elem.subject ? elem.subject : elem.Ques}</h2>
+                    <div className='sm:mr-5 group-hover:rotate-45 duration-300 text-2xl sm:text-5xl'>
+                        <BsArrowRightCircle />
+                    </div>
+                </div>
+            </a>
             
-            {!active && (
-              <div className="mt-1 text-indigo-100 text-xs">
-                Click to reveal
-              </div>
-            )}
-          </div>
+            <div 
+                className={`mx-2 sm:mx-8 mt-2 text-xs opacity-80 sm:text-xl overflow-hidden transition-all duration-500 ${click ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+            >
+                {elem.Ans ? elem.Ans : id === "pyq" ? <PyqCard pyqData={pyqData} /> : ""}
+            </div>
         </div>
-        
-        {/* Card Content */}
-        <div 
-          className={`transition-all duration-500 overflow-hidden ${active ? 'max-h-screen opacity-100 p-4 pt-3' : 'max-h-0 opacity-0 p-0'}`}
-        >
-          <div className="text-gray-700">
-            {elem.Ans ? (
-              <div className="prose max-w-none">{elem.Ans}</div>
-            ) : id === "pyq" ? (
-              <PyqCard pyqData={data} />
-            ) : id === "organiser" || id === "lecture" ? (
-              <div className="text-blue-500 underline">
-                {data ? <a href={data} target="_blank" rel="noopener noreferrer">Open Link</a> : "No content available"}
-              </div>
-            ) : (
-              <div className="text-gray-400 italic">No content available</div>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Fag;
