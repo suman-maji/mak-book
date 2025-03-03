@@ -16,29 +16,29 @@ const Fag = ({ elem }) => {
   };
   
   return (
-    <div className="my-6 mx-auto w-full max-w-3xl">
-      <div className={`overflow-hidden rounded-2xl shadow-lg transition-all duration-500 ${active ? 'bg-white' : 'bg-gradient-to-r from-blue-600 to-indigo-800'}`}>
+    <div className="my-3 mx-auto w-full max-w-2xl">
+      <div className={`overflow-hidden rounded-xl shadow-lg transition-all duration-500 ${active ? 'bg-white' : 'bg-gradient-to-r from-blue-600 to-indigo-800'}`}>
         {/* Card Header */}
         <div 
           onClick={toggleActive}
           className="relative cursor-pointer"
         >
-          <div className={`p-5 transition-all duration-300 ${active ? 'pb-0 border-b border-gray-100' : 'hover:bg-opacity-90'}`}>
+          <div className={`p-4 transition-all duration-300 ${active ? 'pb-0 border-b border-gray-100' : 'hover:bg-opacity-90'}`}>
             <div className="flex justify-between items-center">
-              <h2 className={`font-bold text-xl transition-all duration-300 ${active ? 'text-indigo-900' : 'text-white'}`}>
+              <h2 className={`font-bold text-lg transition-all duration-300 ${active ? 'text-indigo-900' : 'text-white'}`}>
                 {elem.subject ? elem.subject : elem.Ques}
               </h2>
               
-              <div className={`transition-all duration-500 ${active ? 'rotate-90 text-indigo-600' : 'text-white'}`}>
+              <div className={`transition-all duration-500 ml-3 ${active ? 'rotate-90 text-indigo-600' : 'text-white'}`}>
                 <BsArrowRightCircle 
-                  className={`text-3xl transition-transform duration-300 ${active ? '' : 'hover:scale-110'}`}
+                  className={`text-2xl transition-transform duration-300 ${active ? '' : 'hover:scale-110'}`}
                 />
               </div>
             </div>
             
             {!active && (
-              <div className="mt-2 text-indigo-100 text-sm">
-                Click to reveal answer
+              <div className="mt-1 text-indigo-100 text-xs">
+                Click to reveal
               </div>
             )}
           </div>
@@ -46,7 +46,7 @@ const Fag = ({ elem }) => {
         
         {/* Card Content */}
         <div 
-          className={`transition-all duration-500 overflow-hidden ${active ? 'max-h-screen opacity-100 p-5 pt-4' : 'max-h-0 opacity-0 p-0'}`}
+          className={`transition-all duration-500 overflow-hidden ${active ? 'max-h-screen opacity-100 p-4 pt-3' : 'max-h-0 opacity-0 p-0'}`}
         >
           <div className="text-gray-700">
             {elem.Ans ? (
