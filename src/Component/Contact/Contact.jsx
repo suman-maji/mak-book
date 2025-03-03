@@ -30,19 +30,19 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    window.scroll(0, 0);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 px-6">
-      <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div className="min-h-[calc(100vh-4rem)] flex flex-col justify-center content-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-6 sm:py-12 px-6">
+      <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-center">
         {/* Left Side - Image */}
         <div className="hidden lg:block relative">
-          <img src={doubt} alt="Contact" className="rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 w-full h-[450px] object-cover" />
+          <img src={doubt} alt="Contact" className="rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 w-full h-auto max-h-[450px] object-cover" />
         </div>
 
         {/* Right Side - Form */}
-        <div className="bg-gray-800/60 backdrop-blur-lg p-6 rounded-xl shadow-lg w-full">
+        <div className="bg-gray-800/60 backdrop-blur-lg p-6 sm:p-8 rounded-xl shadow-lg w-full">
           <h2 className="text-2xl font-bold text-white text-center mb-4">Get in Touch</h2>
           <p className="text-gray-400 text-center mb-6">We are here to help! Fill in the form below and we will get back to you.</p>
 
@@ -88,4 +88,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
