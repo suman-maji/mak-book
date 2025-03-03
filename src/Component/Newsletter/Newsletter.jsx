@@ -36,7 +36,7 @@ const Newsletter = () => {
   return (
     <div className='text-white bg-gradient-to-b from-gray-800 to-black p-4 md:p-8 sm:py-10'>
       <div className='sm:max-w-lg mx-auto text-sm sm:text-base rounded-2xl my-10 bg-gray-900 p-6 shadow-lg'>
-        <h1 className='text-2xl sm:text-3xl font-semibold text-center mb-4'>Subscribe to our Newsletter</h1>
+        <h1 className='text-2xl sm:text-3xl font-semibold text-center mb-4 text-blue-400'>Subscribe to our Newsletter</h1>
         <p className='text-gray-400 text-center mb-6'>Stay updated with our latest news and updates.</p>
 
         {submitted && (
