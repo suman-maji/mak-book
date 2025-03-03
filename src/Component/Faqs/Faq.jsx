@@ -17,19 +17,19 @@ const Fag = ({ elem }) => {
         <div className='sm:max-w-[70%] mx-auto p-6 flex flex-col items-center'>
             <div 
                 onClick={setPyq} 
-                className='relative w-full max-w-2xl p-5 sm:p-8 bg-gradient-to-br from-gray-900 to-gray-800 shadow-xl rounded-3xl cursor-pointer transition-all duration-500 transform hover:scale-105 active:scale-95 hover:shadow-2xl'
+                className='relative w-full max-w-2xl p-6 sm:p-10 bg-gradient-to-br from-purple-600 to-indigo-800 shadow-2xl rounded-2xl cursor-pointer transition-all duration-500 transform hover:scale-110 hover:rotate-2 active:scale-95 hover:shadow-purple-500'
             >
-                <div className='absolute inset-0 bg-white opacity-5 blur-lg rounded-3xl'></div>
+                <div className='absolute inset-0 bg-white opacity-10 blur-2xl rounded-2xl'></div>
                 <div className='relative flex justify-between items-center'>
-                    <h2 className='text-lg sm:text-2xl text-white font-semibold drop-shadow-md'>{elem.subject ? elem.subject : elem.Ques}</h2>
-                    <div className={`text-3xl text-cyan-400 transition-transform duration-300 ${click ? 'rotate-90' : 'rotate-0'}`}>
+                    <h2 className='text-lg sm:text-3xl text-white font-bold tracking-wider drop-shadow-lg'>{elem.subject ? elem.subject : elem.Ques}</h2>
+                    <div className={`text-4xl text-pink-400 transition-transform duration-500 ${click ? 'rotate-[135deg]' : 'rotate-0'}`}>
                         <BsArrowRightCircle />
                     </div>
                 </div>
             </div>
             
             <div 
-                className={`relative overflow-hidden transition-all duration-700 ease-in-out mt-4 w-full max-w-2xl bg-gray-800 text-white p-5 rounded-3xl shadow-xl ${click ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                className={`relative overflow-hidden transition-all duration-700 ease-in-out mt-5 w-full max-w-2xl bg-white/10 backdrop-blur-lg text-white p-6 rounded-2xl shadow-xl ${click ? 'max-h-[500px] opacity-100 scale-105' : 'max-h-0 opacity-0 scale-95'}`}
             >
                 {elem.Ans ? elem.Ans : id === "pyq" ? <PyqCard pyqData={pyqData} /> : ""}
             </div>
