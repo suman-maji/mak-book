@@ -20,8 +20,8 @@ const Newsletter = () => {
 
   return (
     <div className='flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-900 via-black to-gray-900 p-4'>
-      <div className='w-full max-w-lg bg-white bg-opacity-10 backdrop-blur-lg text-white p-8 rounded-3xl shadow-2xl border border-gray-700 relative overflow-hidden'>
-        <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 rounded-3xl'></div>
+      <div className='w-full max-w-2xl bg-white bg-opacity-10 backdrop-blur-lg text-white p-8 rounded-3xl shadow-2xl border border-gray-700 relative overflow-hidden'>
+        <div className='absolute inset-x-0 top-0 h-16 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 rounded-t-3xl'></div>
         
         <h1 className='text-4xl font-extrabold text-center tracking-wide relative z-10'>Stay Updated!</h1>
         <p className='text-gray-300 text-center mt-2 relative z-10'>Subscribe for the latest updates & exclusive content.</p>
