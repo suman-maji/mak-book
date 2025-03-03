@@ -6,7 +6,7 @@ import { FaCopy } from "react-icons/fa";
 import { IoLogoDiscord } from "react-icons/io5";
 
 const Social = () => {
-    const websiteUrl = "https://snapstudy-makaut.vercel.app/";
+    const websiteUrl = "https://mak-book.vercel.app/";
 
     const copyToClipboard = () => {
         navigator.clipboard.writeText(websiteUrl);
