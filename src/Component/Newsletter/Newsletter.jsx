@@ -19,12 +19,14 @@ const Newsletter = () => {
   };
 
   return (
-    <div className='flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 p-4'>
-      <div className='w-full max-w-lg bg-white bg-opacity-10 backdrop-blur-lg text-white p-6 rounded-3xl shadow-xl border border-gray-700'>
-        <h1 className='text-4xl font-bold text-center tracking-wide'>Stay Updated!</h1>
-        <p className='text-gray-300 text-center mt-2'>Subscribe for the latest updates & exclusive content.</p>
+    <div className='flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-900 via-black to-gray-900 p-4'>
+      <div className='w-full max-w-lg bg-white bg-opacity-10 backdrop-blur-lg text-white p-8 rounded-3xl shadow-2xl border border-gray-700 relative overflow-hidden'>
+        <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 rounded-3xl'></div>
         
-        <form className='mt-6' onSubmit={submitHandler}>
+        <h1 className='text-4xl font-extrabold text-center tracking-wide relative z-10'>Stay Updated!</h1>
+        <p className='text-gray-300 text-center mt-2 relative z-10'>Subscribe for the latest updates & exclusive content.</p>
+        
+        <form className='mt-6 relative z-10' onSubmit={submitHandler}>
           <label htmlFor='email' className='block text-lg mb-2 font-medium'>Email Address</label>
           <input
             onChange={(e) => setEmail(e.target.value)}
@@ -43,7 +45,7 @@ const Newsletter = () => {
 
           <button
             type='submit'
-            className='w-full mt-6 bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md'>
+            className='w-full mt-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg'>
             Subscribe
           </button>
         </form>
@@ -53,3 +55,4 @@ const Newsletter = () => {
 };
 
 export default Newsletter;
+
