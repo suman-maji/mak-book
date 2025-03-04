@@ -1,38 +1,41 @@
-import React from 'react'
-import logo from '../../Assets/logo.png'
-import { NavLink } from 'react-router-dom'
-import { RiDeleteBack2Line } from "react-icons/ri";
+import React from 'react';
+import logo from '../../Assets/logo.png';
+import { NavLink } from 'react-router-dom';
+import { RiCloseLine } from "react-icons/ri";
 
-const MobileNabar = ({navMenu,setNav}) => {
-
+const MobileNavbar = ({ navMenu, setNav }) => {
   return (
-    <div className='h-[100vh] w-[100vw] absolute bg-black text-white p-2'>
-        <div>
-            <img src={logo} alt="snapstudy logo" className='w-[40vw] rounded-lg'/>
-            <div className='flex flex-col p-2 gap-4'>
-                {
-                    navMenu?.map((nav,ind)=>{
-                        return <NavLink
-                        onClick={()=>setNav(false)}
-                        key={ind}
-                        className={"hover:bg-blue-600 p-2 rounded-lg"}
-                        to={nav.route}
-                        >{nav.name}</NavLink>
-                    })
-                }
-            </div>
-        </div>
-        <div className='text-3xl flex justify-center '>
-            <div 
-            onClick={()=>setNav(false)}
-            className='bg-red-600 p-2 rounded-full cursor-pointer hover:bg-red-700'>
-            <RiDeleteBack2Line/>
-            </div>
-            
-        </div>
-        
-    </div>
-  )
-}
+    <div className="fixed inset-0 bg-black bg-opacity-80 text-white flex flex-col items-center p-6 backdrop-blur-md">
+      {/* Logo Section */}
+      <div className="w-full flex justify-center mb-6">
+        <img src={logo} alt="SnapStudy Logo" className="w-40 md:w-48 rounded-lg shadow-lg" />
+      </div>
 
-export default MobileNabar
+      {/* Navigation Links */}
+      <nav className="w-full flex flex-col items-center gap-4">
+        {navMenu?.map((nav, ind) => (
+          <NavLink
+            key={ind}
+            to={nav.route}
+            onClick={() => setNav(false)}
+            className="w-3/4 text-center text-lg font-medium py-3 rounded-xl transition-all duration-300 bg-gray-800 hover:bg-blue-600 hover:scale-105 shadow-md"
+          >
+            {nav.name}
+          </NavLink>
+        ))}
+      </nav>
+
+      {/* Close Button */}
+      <div className="absolute bottom-8">
+        <button
+          onClick={() => setNav(false)}
+          className="bg-white bg-opacity-20 p-3 rounded-full shadow-lg hover:bg-opacity-40 transition-all duration-300"
+        >
+          <RiCloseLine className="text-3xl text-white" />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default MobileNavbar;
