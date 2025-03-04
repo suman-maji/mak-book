@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import bgVideo from "../../Assets/bg-video.mp4";
 
 const Hero = () => {
@@ -26,32 +25,20 @@ const Hero = () => {
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
-        <motion.h1
-          className="text-sm sm:text-xl lg:text-2xl font-medium tracking-wide text-gray-300"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
+        <h1 className="text-sm sm:text-xl lg:text-2xl font-medium tracking-wide text-gray-300 animate-fadeIn">
           Explore the Latest MAKAUT Study Material
-        </motion.h1>
+        </h1>
 
-        <motion.h2
-          className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold my-4 text-white drop-shadow-md"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-        >
+        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold my-4 text-white drop-shadow-md animate-fadeInSlow">
           Organized with Ease
-        </motion.h2>
+        </h2>
 
-        <motion.button
+        <button
           onClick={readnowHandler}
-          className="bg-blue-600 text-white px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-full font-semibold tracking-wide shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-500"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          className="bg-blue-600 text-white px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-full font-semibold tracking-wide shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-500 focus:ring-4 focus:ring-blue-300"
         >
           Read Now
-        </motion.button>
+        </button>
       </div>
     </div>
   );
