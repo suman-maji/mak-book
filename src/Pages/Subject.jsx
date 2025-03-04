@@ -44,7 +44,7 @@ const Subject = () => {
     }
 
     return (
-        <div className="flex flex-col justify-between min-h-screen bg-gradient-to-br from-indigo-900/50 via-gray-900 to-indigo-900 p-4 sm:p-8">
+        <div className="bg-gradient-to-br from-indigo-900/50 via-gray-900 to-indigo-900 p-4 sm:p-8 flex flex-col">
             {error ? (
                 <UploadedSoon />
             ) : (
@@ -53,18 +53,15 @@ const Subject = () => {
                         Subject Name
                     </h1>
 
-                    <div className="flex flex-col gap-4 sm:gap-6">
+                    <div className="flex-grow">
                         {data?.map((elem, ind) => (
-                            <div
-                                key={ind}
-                                className="transform transition-all duration-300 hover:scale-105"
-                            >
+                            <div key={ind} className="mb-4">
                                 <Fag elem={elem} />
                             </div>
                         ))}
                     </div>
 
-                    <div className="mt-6 text-center">
+                    <div className="text-center mt-6">
                         <h1 className="text-2xl sm:text-3xl font-semibold text-indigo-300">
                             Thanks for using our website!
                         </h1>
@@ -73,7 +70,7 @@ const Subject = () => {
                         </h2>
                     </div>
 
-                    <div className="mt-4 sm:mt-6 flex justify-center">
+                    <div className="mt-6 flex justify-center">
                         <Social />
                     </div>
                 </>
@@ -83,3 +80,4 @@ const Subject = () => {
 };
 
 export default Subject;
+
