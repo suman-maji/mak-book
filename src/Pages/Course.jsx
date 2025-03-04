@@ -47,8 +47,8 @@ const Course = () => {
     if (id === "news") return <News />;
 
     return (
-        <div className='text-white bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen py-10 px-6 sm:px-12 flex flex-col'>
-            <div className='flex-grow'>
+        <div className='min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white px-4 sm:px-12 py-6'>
+            <div className='flex-grow max-w-5xl mx-auto'>
                 <h1 className='text-center text-3xl sm:text-4xl text-cyan-400 font-bold mb-10'>Get Your <span className='text-green-400'>{id}</span></h1>
                 
                 <div>
@@ -77,8 +77,14 @@ const Course = () => {
                 </div>
             </div>
             
-            {/* Ensure no extra gap */}
-            <div className='mt-auto'></div>
+            <div className='mt-12 text-center'>
+                <h1 className='text-2xl sm:text-3xl font-semibold text-cyan-300'>
+                    Thanks for using our website!
+                </h1>
+                <h2 className='mt-2 text-lg text-gray-400'>
+                    Please share with your friends 💜
+                </h2>
+            </div>
         </div>
     );
 };
