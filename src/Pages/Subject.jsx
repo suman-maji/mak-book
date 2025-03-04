@@ -65,13 +65,13 @@ const Subject = () => {
                     </div>
 
                     <div className="mt-12 text-center">
-                        <h1 className="text-2xl font-semibold tracking-wide">
-                            Thanks for using our website
-                        </h1>
-                        <h2 className="text-sm mt-2 opacity-80">
-                            Please share with your friends
-                        </h2>
-                    </div>
+            <h1 className="text-2xl sm:text-3xl font-semibold text-indigo-300">
+              Thanks for using our website!
+            </h1>
+            <h2 className="mt-2 text-lg text-gray-400">
+              Please share with your friends 💜
+            </h2>
+          </div>       
 
                     <div className="mt-6 flex justify-center">
                         <Social />
