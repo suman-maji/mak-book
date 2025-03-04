@@ -25,8 +25,8 @@ const Hero = () => {
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
-        <h1 className="text-sm sm:text-xl lg:text-2xl font-medium tracking-wide text-gray-300 animate-fadeIn">
-          Explore the Latest MAKAUT Study Material
+        <h1 className="text-lg sm:text-2xl lg:text-3xl font-semibold text-white animate-fadeIn">
+          Explore the Latest <span className="text-blue-400">MAKAUT Study Material</span>
         </h1>
 
         <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold my-4 text-white drop-shadow-md animate-fadeInSlow">
@@ -78,4 +78,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
