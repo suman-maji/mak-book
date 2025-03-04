@@ -35,13 +35,47 @@ const Hero = () => {
 
         <button
           onClick={readnowHandler}
-          className="bg-blue-600 text-white px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-full font-semibold tracking-wide shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-500 focus:ring-4 focus:ring-blue-300"
+          className="bg-blue-600 text-white px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-full font-semibold tracking-wide shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-500 animate-bounceOnce"
         >
           Read Now
         </button>
       </div>
+
+      {/* CSS Animations */}
+      <style>
+        {`
+          @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+
+          @keyframes fadeInSlow {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+
+          @keyframes bounceOnce {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+          }
+
+          .animate-fadeIn {
+            animation: fadeIn 1s ease-out;
+          }
+
+          .animate-fadeInSlow {
+            animation: fadeInSlow 1.2s ease-out;
+          }
+
+          .animate-bounceOnce {
+            animation: bounceOnce 0.6s ease-out 1;
+          }
+        `}
+      </style>
     </div>
   );
 };
 
 export default Hero;
+
