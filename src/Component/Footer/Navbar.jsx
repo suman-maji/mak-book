@@ -28,7 +28,7 @@ const Navbar = () => {
               </NavLink>
               
               {/* Desktop Menu */}
-              <div className="hidden md:flex items-center space-x-6">
+              <div className="hidden md:flex items-center space-x-4">
                 {navMenu.map((menu, ind) => (
                   <NavLink 
                     key={ind}
