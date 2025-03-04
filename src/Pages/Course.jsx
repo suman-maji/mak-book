@@ -47,35 +47,43 @@ const Course = () => {
     if (id === "news") return <News />;
 
     return (
-        <div className='text-white bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen py-10 px-6 sm:px-12'>
-            <h1 className='text-center text-3xl sm:text-4xl text-cyan-400 font-bold mb-10'>
-                Get Your <span className='text-green-400'>{id}</span>
-            </h1>
-            
-            <div>
-                <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Branch</h2>
-                <div className='grid grid-cols-3 gap-10 sm:gap-12'>
-                    {branchName.map((elem, index) => (
-                        <div key={index} 
-                             onClick={() => selectBranch(elem)} 
-                             className={`cursor-pointer transition-transform transform hover:scale-110 ${elem.name === selectedBranch ? "opacity-50" : ""}`}>
-                            <Branch elem={elem} selectedBranch={selectedBranch} />
-                        </div>
-                    ))}
+        <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-10 px-6 sm:px-12">
+            <div className="flex-grow">
+                <h1 className='text-center text-3xl sm:text-4xl text-cyan-400 font-bold mb-8'>
+                    Get Your <span className='text-green-400'>{id}</span>
+                </h1>
+                
+                <div>
+                    <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Branch</h2>
+                    <div className='grid grid-cols-3 gap-6 sm:gap-8'>
+                        {branchName.map((elem, index) => (
+                            <div key={index} 
+                                 onClick={() => selectBranch(elem)} 
+                                 className={`cursor-pointer transition-transform transform hover:scale-110 ${elem.name === selectedBranch ? "opacity-50" : ""}`}>
+                                <Branch elem={elem} selectedBranch={selectedBranch} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className='mt-10'>
+                    <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Semester</h2>
+                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6'>
+                        {semesters.map((_, index) => (
+                            <div key={index} className='cursor-pointer transition-transform transform hover:scale-105'>
+                                <div onClick={() => selectSem(index)}>
+                                    <Semester ind={index} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 
-            <div className='mt-12'>
-                <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Semester</h2>
-                <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6'>
-                    {semesters.map((_, index) => (
-                        <div key={index} className='cursor-pointer transition-transform transform hover:scale-105'>
-                            <div onClick={() => selectSem(index)}>
-                                <Semester ind={index} />
-                            </div>
-                        </div>
-                    ))}
-                </div>
+            <div className="mt-8 text-center">
+                <h2 className="text-lg text-gray-400">
+                    Please share this website with your friends 💜
+                </h2>
             </div>
         </div>
     );
