@@ -2,48 +2,41 @@ import React from 'react';
 import logo from '../../Assets/logo.png';
 import { NavLink } from 'react-router-dom';
 import { RiCloseCircleFill } from "react-icons/ri";
-import { motion } from "framer-motion"; // Import for animations
 
 const MobileNavbar = ({ navMenu, setNav }) => {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-end z-50">
-      {/* Sidebar with Animation */}
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "100%" }}
-        transition={{ type: "spring", stiffness: 100 }}
-        className="w-[80vw] h-full bg-gray-900 text-white shadow-xl flex flex-col p-6"
-      >
-        {/* Logo */}
-        <div className="flex justify-center">
-          <img src={logo} alt="snapstudy logo" className="w-[50%] rounded-lg" />
-        </div>
+    <div className="fixed inset-0 bg-gradient-to-b from-gray-900 to-black text-white flex flex-col items-center p-5 z-50">
+      
+      {/* Logo Section */}
+      <div className="w-full flex justify-center mb-6">
+        <img src={logo} alt="SnapStudy Logo" className="w-40 rounded-lg shadow-lg" />
+      </div>
 
-        {/* Navigation Links */}
-        <nav className="mt-8 flex flex-col space-y-4">
-          {navMenu?.map((nav, ind) => (
-            <NavLink
-              onClick={() => setNav(false)}
-              key={ind}
-              className="text-lg font-medium hover:bg-blue-600 p-3 rounded-lg transition-all duration-300"
-              to={nav.route}
-            >
-              {nav.name}
-            </NavLink>
-          ))}
-        </nav>
-
-        {/* Close Button */}
-        <div className="mt-auto flex justify-center">
-          <button
+      {/* Navigation Links */}
+      <div className="flex flex-col w-full items-center gap-4">
+        {navMenu?.map((nav, ind) => (
+          <NavLink
+            key={ind}
+            to={nav.route}
             onClick={() => setNav(false)}
-            className="bg-red-600 p-3 rounded-full text-white text-4xl transition-all duration-300 hover:bg-red-700"
+            className="w-4/5 text-lg font-semibold text-white bg-gray-800 px-4 py-3 rounded-lg shadow-md transition-all duration-300 hover:bg-blue-600 hover:scale-105"
           >
-            <RiCloseCircleFill />
-          </button>
-        </div>
-      </motion.div>
+            {nav.name}
+          </NavLink>
+        ))}
+      </div>
+
+      {/* Close Button */}
+      <div className="absolute bottom-8">
+        <button
+          onClick={() => setNav(false)}
+          className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-lg shadow-lg hover:bg-white/20 transition-all duration-300"
+        >
+          <RiCloseCircleFill className="text-3xl text-red-500" />
+          <span>Close Menu</span>
+        </button>
+      </div>
+      
     </div>
   );
 };
