@@ -43,7 +43,8 @@ const Products = () => {
                 <p className='text-lg sm:text-xl font-light text-gray-300 max-w-3xl mx-auto mb-12'>Explore our key features and elevate your learning experience.</p>
             </div>
 
-            <div className='mt-12 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
+            {/* Grid Fix Applied Here */}
+            <div className='mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10'>
                 {productData.map((elem, ind) => (
                     <NavLink key={ind} to={`/choice/${elem.route}`} className="transform transition duration-300 hover:scale-105">
                         <div className="p-6 bg-gray-800 bg-opacity-60 backdrop-filter backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl border border-gray-700 transition-all duration-300">
