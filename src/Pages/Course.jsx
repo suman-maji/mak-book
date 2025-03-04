@@ -47,8 +47,8 @@ const Course = () => {
     if (id === "news") return <News />;
 
     return (
-        <div className='text-white bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen py-10 px-6 sm:px-12 flex flex-col justify-between'>
-            <div>
+        <div className='text-white bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen py-10 px-6 sm:px-12 flex flex-col'>
+            <div className='flex-grow'>
                 <h1 className='text-center text-3xl sm:text-4xl text-cyan-400 font-bold mb-10'>Get Your <span className='text-green-400'>{id}</span></h1>
                 
                 <div>
@@ -77,11 +77,10 @@ const Course = () => {
                 </div>
             </div>
             
-            {/* Reduced gap between content and footer */}
-            <div className='mt-4 sm:mt-6'></div>
+            {/* Ensure no extra gap */}
+            <div className='mt-auto'></div>
         </div>
     );
 };
 
 export default Course;
-
