@@ -34,15 +34,15 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 px-6">
-      <div className="w-full max-w-5xl flex flex-col lg:flex-row gap-12 items-center lg:items-stretch">
+    <div className="flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 px-6">
+      <div className="w-full max-w-5xl flex flex-col-reverse lg:flex-row items-center lg:items-stretch gap-6">
         
-        {/* Left Side - Image (Now Always Properly Displayed) */}
-        <div className="hidden lg:flex w-1/2 justify-center items-center">
-          <img src={doubt} alt="Contact" className="rounded-xl shadow-lg w-full h-full object-cover" />
+        {/* Left Side - Image (Always Displayed Properly) */}
+        <div className="w-full lg:w-1/2 flex justify-center items-center">
+          <img src={doubt} alt="Contact" className="rounded-xl shadow-lg w-full h-auto max-h-[450px] object-cover" />
         </div>
 
-        {/* Right Side - Form (Now Properly Aligned) */}
+        {/* Right Side - Form (No More Large Gaps) */}
         <div className="w-full lg:w-1/2 bg-gray-800/60 backdrop-blur-lg p-6 rounded-xl shadow-lg">
           <h2 className="text-2xl font-bold text-white text-center mb-4">Get in Touch</h2>
           <p className="text-gray-400 text-center mb-6">We are here to help! Fill in the form below and we will get back to you.</p>
