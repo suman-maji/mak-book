@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import logo from "../../Assets/logo.png"
-import MobileNavbar from './MobileNabar'
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import logo from "../../Assets/logo.png";
+import MobileNavbar from './MobileNabar';
 
 const Navbar = () => {
   const navMenu = [
@@ -10,43 +10,46 @@ const Navbar = () => {
     { name: "Organiser", route: "choice/organiser" },
     { name: "PYQ", route: "choice/pyq" },
     { name: "Lectures", route: "choice/playlist" }
-  ]
+  ];
 
   const [nav, setNav] = useState(false);
   
   return (
-    <div className="sticky top-0 z-50">
+    <div className="sticky top-0 z-50 shadow-md bg-gradient-to-r from-gray-900 to-gray-800">
       {nav ? (
         <MobileNavbar navMenu={navMenu} setNav={setNav} />
       ) : (
-        <nav className="bg-gray-900 shadow-lg">
-          <div className=" mx-auto px-2 sm:px-6 lg:px-8">
+        <nav className="bg-transparent">
+          <div className="mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <NavLink to={"/"} className="flex-shrink-0">
-                <img src={logo} alt="Logo" className="h-10 w-auto rounded-md" />
+              {/* Logo */}
+              <NavLink to={"/"} className="flex items-center">
+                <img src={logo} alt="Logo" className="h-10 w-auto rounded-md shadow-lg" />
               </NavLink>
-              <div className="hidden md:flex items-center space-x-4">
+              
+              {/* Desktop Menu */}
+              <div className="hidden md:flex items-center space-x-6">
                 {navMenu.map((menu, ind) => (
                   <NavLink 
                     key={ind}
                     to={menu.route}
                     className={({ isActive }) => 
-                      `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ease-in-out
+                      `px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 
                       ${isActive 
-                        ? "bg-indigo-600 text-white" 
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                      }`
+                        ? "bg-indigo-600 text-white shadow-md" 
+                        : "text-gray-300 hover:bg-gray-700 hover:text-white hover:shadow-lg"}`
                     }
                   >
                     {menu.name}
                   </NavLink>
                 ))}
               </div>
+              
+              {/* Mobile Menu Button */}
               <div className="md:hidden">
                 <button 
                   onClick={() => setNav(true)}
-                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                  aria-expanded="false"
+                  className="p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 >
                   <span className="sr-only">Open main menu</span>
                   <svg
@@ -66,7 +69,7 @@ const Navbar = () => {
         </nav>
       )}
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
