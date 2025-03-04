@@ -1,83 +1,87 @@
 import React, { useEffect, useState } from 'react';
-import Fag from '../Component/Faqs/Faq';
-import Social from '../Component/Cards/Social';
-import { useParams } from 'react-router-dom';
-import UploadedSoon from '../Component/Error/UploadedSoon';
-import Spinner from '../Component/Error/Spinner';
+import Branch from '../Component/Cards/Branch';
+import Semester from '../Component/Cards/Semester';
+import { useNavigate, useParams } from 'react-router-dom';
+import cse_img from "../Assets/cse_img.jpg";
+import it_img from "../Assets/it_img.jpg";
+import ece_img from "../Assets/ece_img.jpg";
+import aiml_img from "../Assets/aiml_img.jpg";
+import me_img from "../Assets/mech_img.jpg";
+import civil_img from "../Assets/civil_img.jpg";
+import News from '../Component/News/News';
 
-const Subject = () => {
-    // State for handling API data
-    const [loading, setLoading] = useState(true);
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(null);
+const Course = () => {
+    const [branchRoute, setBranchRoute] = useState("");
+    const [selectedBranch, setSelectedBranch] = useState("");
+    const { id } = useParams();
+    const navigate = useNavigate();
+    
+    const branchName = [
+        { name: "CSE", image: cse_img },
+        { name: "IT", image: it_img },
+        { name: "ECE", image: ece_img },
+        { name: "AIML", image: aiml_img },
+        { name: "ME", image: me_img },
+        { name: "CIVIL", image: civil_img }
+    ];
+    const semesters = [1, 2, 3, 4, 5, 6, 7, 8];
 
-    const { semId } = useParams();
-    const { branchId } = useParams();
+    const selectSem = (index) => {
+        if (!branchRoute) {
+            alert("Please select a branch first!");
+        } else {
+            navigate(`${branchRoute}/sem${index + 1}`);
+        }
+    };
 
-    const url = `${process.env.REACT_APP_API_URL}${branchId}.json`;
+    const selectBranch = (elem) => {
+        setBranchRoute(`/choice/${id}/${elem.name.toLowerCase()}`);
+        setSelectedBranch(elem.name.toUpperCase());
+        window.scrollTo({ top: 500, behavior: "smooth" });
+    };
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url);
-                const result = await response.json();
-                if (result[semId]?.length !== 0) {
-                    setData(result[semId]);
-                }
-            } catch (err) {
-                setError(err);
-                console.error("Can't fetch the data", err);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchData();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, [semId, url]);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
 
-    if (loading) {
-        return (
-            <div className="flex justify-center items-center min-h-screen">
-                <Spinner />
-            </div>
-        );
-    }
+    if (id === "news") return <News />;
 
     return (
-        <div className="bg-gradient-to-br from-indigo-900/50 via-gray-900 to-indigo-900 p-4 sm:p-8 flex flex-col">
-            {error ? (
-                <UploadedSoon />
-            ) : (
-                <>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold text-center sm:text-left sm:ml-[10%] p-4 sm:p-6 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent animate-fadeIn">
-                        Subject Name
-                    </h1>
-
-                    <div className="flex-grow">
-                        {data?.map((elem, ind) => (
-                            <div key={ind} className="mb-4">
-                                <Fag elem={elem} />
+        <div className='text-white bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen flex flex-col'>
+            <div className='flex-grow py-10 px-6 sm:px-12'>
+                <h1 className='text-center text-3xl sm:text-4xl text-cyan-400 font-bold mb-10'>Get Your <span className='text-green-400'>{id}</span></h1>
+                
+                <div>
+                    <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Branch</h2>
+                    <div className='grid grid-cols-3 gap-6 sm:gap-8'>
+                        {branchName.map((elem, index) => (
+                            <div key={index} onClick={() => selectBranch(elem)} 
+                                className={`cursor-pointer transition-transform transform hover:scale-110 ${elem.name === selectedBranch ? "opacity-50" : ""}`}>
+                                <Branch elem={elem} selectedBranch={selectedBranch} />
                             </div>
                         ))}
                     </div>
+                </div>
 
-                    <div className="text-center mt-6">
-                        <h1 className="text-2xl sm:text-3xl font-semibold text-indigo-300">
-                            Thanks for using our website!
-                        </h1>
-                        <h2 className="mt-2 text-lg text-gray-400">
-                            Please share with your friends 💜
-                        </h2>
+                <div className='mt-8 sm:mt-12'>
+                    <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Semester</h2>
+                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6'>
+                        {semesters.map((_, index) => (
+                            <div key={index} className='cursor-pointer transition-transform transform hover:scale-105'>
+                                <div onClick={() => selectSem(index)}>
+                                    <Semester ind={index} />
+                                </div>
+                            </div>
+                        ))}
                     </div>
-
-                    <div className="mt-6 flex justify-center">
-                        <Social />
-                    </div>
-                </>
-            )}
+                </div>
+            </div>
+            
+            {/* Ensure footer stays close */}
+            <div className='h-0'></div>
         </div>
     );
 };
 
-export default Subject;
+export default Course;
 
