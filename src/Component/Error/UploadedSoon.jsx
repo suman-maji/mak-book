@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const UploadedSoon = () => {
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-700 dark:from-gray-900 dark:to-black transition-all px-4">
+    <div className="w-full h-[50vh] flex items-center justify-center bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-700 dark:from-gray-900 dark:to-black transition-all px-4">
       <div className="bg-white/10 backdrop-blur-lg shadow-xl rounded-2xl p-8 sm:p-12 text-center border border-white/20 max-w-lg">
         <h2 className="text-2xl sm:text-4xl font-extrabold text-white drop-shadow-lg">
           Uploading Soon!
