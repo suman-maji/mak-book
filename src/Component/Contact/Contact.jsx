@@ -35,14 +35,15 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 px-6">
-      <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Image */}
-        <div className="hidden lg:block relative">
-          <img src={doubt} alt="Contact" className="rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 w-full h-[450px] object-cover" />
+      <div className="w-full max-w-5xl flex flex-col lg:flex-row gap-12 items-center lg:items-stretch">
+        
+        {/* Left Side - Image (Now Always Properly Displayed) */}
+        <div className="hidden lg:flex w-1/2 justify-center items-center">
+          <img src={doubt} alt="Contact" className="rounded-xl shadow-lg w-full h-full object-cover" />
         </div>
 
-        {/* Right Side - Form */}
-        <div className="bg-gray-800/60 backdrop-blur-lg p-6 rounded-xl shadow-lg w-full">
+        {/* Right Side - Form (Now Properly Aligned) */}
+        <div className="w-full lg:w-1/2 bg-gray-800/60 backdrop-blur-lg p-6 rounded-xl shadow-lg">
           <h2 className="text-2xl font-bold text-white text-center mb-4">Get in Touch</h2>
           <p className="text-gray-400 text-center mb-6">We are here to help! Fill in the form below and we will get back to you.</p>
 
@@ -79,7 +80,9 @@ const Contact = () => {
               <MessageSquare className="absolute right-3 top-9 w-5 h-5 text-gray-400" />
             </div>
 
-            <button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500">Send Message</button>
+            <button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              Send Message
+            </button>
           </form>
         </div>
       </div>
@@ -88,3 +91,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
