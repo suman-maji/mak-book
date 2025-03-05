@@ -14,21 +14,21 @@ const Fag = ({ elem }) => {
     };
 
     return (
-        <div className='sm:max-w-[85%] mx-auto p-4'>
+        <div className='sm:max-w-[90%] mx-auto p-2'>
             <a href={elem[id]} className='block'>
                 <div 
                     onClick={setPyq} 
-                    className='text-xl sm:text-2xl flex justify-between items-center group cursor-pointer rounded-3xl sm:rounded-full bg-gradient-to-r from-indigo-600 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-lg p-2 sm:p-3 sm:px-14 hover:scale-105 active:scale-95 font-[Inter,sans-serif]'
+                    className='text-lg sm:text-xl flex justify-between items-center group cursor-pointer rounded-3xl sm:rounded-full bg-gradient-to-r from-indigo-600 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-lg p-1 sm:p-2 sm:px-16 hover:scale-105 active:scale-95 font-[Inter,sans-serif]'
                 >
-                    <h2 className='group-hover:ml-4 duration-300 text-base sm:text-2xl font-[Poppins,sans-serif]'>{elem.subject ? elem.subject : elem.Ques}</h2>
-                    <div className='sm:mr-5 group-hover:rotate-45 duration-300 text-2xl sm:text-5xl'>
+                    <h2 className='group-hover:ml-4 duration-300 text-sm sm:text-xl font-[Poppins,sans-serif]'>{elem.subject ? elem.subject : elem.Ques}</h2>
+                    <div className='sm:mr-4 group-hover:rotate-45 duration-300 text-xl sm:text-4xl'>
                         <BsArrowRightCircle />
                     </div>
                 </div>
             </a>
             
             <div 
-                className={`mx-2 sm:mx-8 mt-2 text-xs opacity-80 sm:text-lg overflow-hidden transition-all duration-500 ${click ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                className={`mx-2 sm:mx-6 mt-1 text-xs opacity-80 sm:text-md overflow-hidden transition-all duration-500 ${click ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
             >
                 {elem.Ans ? elem.Ans : id === "pyq" ? <PyqCard pyqData={pyqData} /> : ""}
             </div>
@@ -37,3 +37,4 @@ const Fag = ({ elem }) => {
 };
 
 export default Fag;
+
