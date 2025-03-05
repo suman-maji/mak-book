@@ -11,7 +11,8 @@ import civil_img from "../Assets/civil_img.jpg";
 import News from '../Component/News/News';
 
 const Course = () => {
-    const [selectedBranch, setSelectedBranch] = useState(null);
+    const [branchRoute, setBranchRoute] = useState("");
+    const [selectedBranch, setSelectedBranch] = useState("");
     const { id } = useParams();
     const navigate = useNavigate();
     
@@ -26,15 +27,16 @@ const Course = () => {
     const semesters = [1, 2, 3, 4, 5, 6, 7, 8];
 
     const selectSem = (index) => {
-        if (!selectedBranch) {
+        if (!branchRoute) {
             alert("Please select a branch first!");
         } else {
-            navigate(`/subject/${selectedBranch.toLowerCase()}/sem${index + 1}`);
+            navigate(`${branchRoute}/sem${index + 1}`);
         }
     };
 
     const selectBranch = (elem) => {
-        setSelectedBranch(elem.name);
+        setBranchRoute(`/choice/${id}/${elem.name.toLowerCase()}`);
+        setSelectedBranch(elem.name.toUpperCase());
         window.scrollTo({ top: 500, behavior: "smooth" });
     };
 
@@ -63,7 +65,7 @@ const Course = () => {
             <div className='mt-12'>
                 <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Semester</h2>
                 <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6'>
-                    {semesters.map((sem, index) => (
+                    {semesters.map((_, index) => (
                         <div key={index} className='cursor-pointer transition-transform transform hover:scale-105'>
                             <div onClick={() => selectSem(index)}>
                                 <Semester ind={index} />
@@ -76,4 +78,4 @@ const Course = () => {
     );
 };
 
-export default Course;
+export default Course
