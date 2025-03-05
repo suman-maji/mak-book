@@ -10,7 +10,7 @@ const Hero = () => {
     <div className="relative text-white">
       {/* Background Video */}
       <video
-        className="w-full h-[30vh] md:h-[80vh] object-cover"
+        className="w-full h-[25vh] md:h-[70vh] object-cover"
         autoPlay
         muted
         loop
@@ -78,5 +78,4 @@ const Hero = () => {
 };
 
 export default Hero;
-
 
