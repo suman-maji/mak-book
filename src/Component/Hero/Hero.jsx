@@ -43,7 +43,7 @@ const Hero = () => {
 
       {/* CSS Animations */}
       <style>
-        {
+        {`
           @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(-10px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -71,7 +71,7 @@ const Hero = () => {
           .animate-bounceOnce {
             animation: bounceOnce 0.6s ease-out 1;
           }
-        }
+        `}
       </style>
     </div>
   );
