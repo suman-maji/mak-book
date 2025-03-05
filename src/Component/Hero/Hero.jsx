@@ -10,7 +10,7 @@ const Hero = () => {
     <div className="relative text-white">
       {/* Background Video */}
       <video
-        className="w-full h-[25vh] md:h-[70vh] object-cover"
+        className="w-full h-[30vh] md:h-[80vh] object-cover"
         autoPlay
         muted
         loop
@@ -43,7 +43,7 @@ const Hero = () => {
 
       {/* CSS Animations */}
       <style>
-        {`
+        {
           @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(-10px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -71,11 +71,10 @@ const Hero = () => {
           .animate-bounceOnce {
             animation: bounceOnce 0.6s ease-out 1;
           }
-        `}
+        }
       </style>
     </div>
   );
 };
 
 export default Hero;
-
