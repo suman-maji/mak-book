@@ -27,7 +27,7 @@ const Faqs = () => {
                 <h1 className='text-4xl sm:text-6xl font-extrabold font-[Playfair] tracking-wide'>
                     Frequently Asked Questions
                 </h1>
-                <div className="w-16 h-1 bg-indigo-400 mx-auto mt-4 rounded-full"></div>
+                <div className="w-16 h-1 bg-indigo-400 mx-auto mt-4 rounded-full"></div> {/* Fixed size bar under heading */}
             </div>
             
             <div className='flex flex-col gap-6 max-w-4xl mx-auto'>
