@@ -40,7 +40,7 @@ const Subject = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-gray-900 to-black text-white px-4 sm:px-8 py-6">
+    <div className="flex flex-col bg-gradient-to-br from-indigo-900 via-gray-900 to-black text-white px-4 sm:px-8 py-6">
       {error ? (
         <div className="text-center text-red-500 text-lg font-semibold">
           Unable to load data. Please try again later.
@@ -48,12 +48,12 @@ const Subject = () => {
       ) : !data ? (
         <UploadedSoon />
       ) : (
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto flex flex-col flex-grow">
           <h1 className="text-4xl sm:text-6xl font-extrabold text-center mb-6 sm:mb-10 text-indigo-400">
             Subject List
           </h1>
 
-          <div className="space-y-3">
+          <div className="space-y-3 flex-grow">
             {data.map((elem, ind) => (
               <div
                 key={ind}
@@ -64,7 +64,7 @@ const Subject = () => {
             ))}
           </div>
 
-          <div className="mt-8 sm:mt-12 text-center">
+          <div className="mt-6 sm:mt-8 text-center">
             <h1 className="text-2xl sm:text-3xl font-semibold text-indigo-300">
               Thanks for using our website!
             </h1>
@@ -73,7 +73,7 @@ const Subject = () => {
             </h2>
           </div>
 
-          <div className="mt-6 sm:mt-8 flex justify-center">
+          <div className="mt-4 sm:mt-6 flex justify-center">
             <Social />
           </div>
         </div>
@@ -83,3 +83,4 @@ const Subject = () => {
 };
 
 export default Subject;
+
