@@ -10,23 +10,16 @@ const Subject = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
-  const { semId, branchId } = useParams();
-  const url = `${process.env.REACT_APP_API_URL}/${branchId}.json`;
+  const { semId } = useParams();
+  const { branchId } = useParams();
+  const url = process.env.REACT_APP_API_URL + branchId + `.json`;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("Fetching from:", url);
         const response = await fetch(url);
         const result = await response.json();
-        console.log("API Response:", result);
-        console.log("Subjects for semId:", semId, result[semId]);
-
-        if (result[semId] && result[semId].length > 0) {
-          setData(result[semId]);
-        } else {
-          setData([]);  // Set empty array instead of null
-        }
+        if (result[semId]?.length !== 0) setData(result[semId]);
       } catch (err) {
         setError(err);
         console.error("Can't fetch the data", err);
@@ -36,7 +29,7 @@ const Subject = () => {
     };
     fetchData();
     window.scrollTo(0, 0);
-  }, [semId, branchId]); // Added branchId
+  }, [semId]);
 
   if (loading) {
     return (
@@ -52,17 +45,17 @@ const Subject = () => {
         <div className="text-center text-red-500 text-lg font-semibold">
           Unable to load data. Please try again later.
         </div>
-      ) : data.length === 0 ? ( 
+      ) : !data ? (
         <UploadedSoon />
       ) : (
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-center mb-6 sm:mb-10 text-indigo-400 font-playfair tracking-wide">
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-center mb-6 sm:mb-10 text-indigo-400">
             Subject List
           </h1>
 
           <div className="space-y-3">
             {data.map((elem, ind) => (
-              <div key={ind}>
+              <div key={ind} className="">
                 <Fag elem={elem} />
               </div>
             ))}
@@ -87,4 +80,3 @@ const Subject = () => {
 };
 
 export default Subject;
-
