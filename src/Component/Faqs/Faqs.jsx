@@ -1,5 +1,5 @@
 import React from 'react';
-import Faq from './Faq'; // Fixed the import name from 'Fag' to 'Faq'
+import Faq from './Faq'; // Ensure Faq component is correctly imported
 
 const Faqs = () => {
     const faqs = [
@@ -22,10 +22,12 @@ const Faqs = () => {
     ];
     
     return (
-        <div className='bg-gradient-to-tr from-indigo-900/50 via-gray-800 to-indigo-900 text-white py-16 px-4 sm:px-8 rounded-lg shadow-lg'>
+        <div className='bg-gradient-to-tr from-purple-900/50 via-indigo-800 to-purple-900 text-white py-16 px-4 sm:px-8 rounded-lg shadow-xl font-[Inter]'>
             <div className="text-center mb-12">
-                <h1 className='text-4xl sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200'>Frequently Asked Questions</h1>
-                <div className="w-16 h-1 bg-blue-400 mx-auto mt-4 rounded-full"></div>
+                <h1 className='text-4xl sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-200 to-indigo-400'>
+                    Frequently Asked Questions
+                </h1>
+                <div className="w-16 h-1 bg-indigo-400 mx-auto mt-4 rounded-full"></div>
             </div>
             
             <div className='flex flex-col gap-6 max-w-4xl mx-auto'>
