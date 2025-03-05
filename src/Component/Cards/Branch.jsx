@@ -1,21 +1,25 @@
-import React from 'react'
+import React from "react";
 
-const Branch = ({elem,selectedBranch}) => {
+const Branch = ({ elem, selectedBranch }) => {
   return (
-    <div>
-      <div className={`oveflow-hidden relative group cursor-pointer hover:opacity-80 `}>
-        <img src={elem.image} alt="" className='h-[100%] w-[100%] rounded-2xl' />
-        <div className='absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] '>
-          <button className='bg-white text-xs sm:text-sm text-black sm:px-3 p-2 sm:py-2 rounded-full group-hover:bg-black group-hover:text-white duration-200'>{selectedBranch==elem.name ? "selected" : "select"}
+    <div className="flex flex-col items-center">
+      <div className="overflow-hidden relative group cursor-pointer hover:opacity-90 transition duration-300 rounded-2xl">
+        <img
+          src={elem.image}
+          alt={elem.name}
+          className="h-full w-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 flex justify-center items-center">
+          <button className="bg-white text-sm sm:text-base text-black px-4 py-2 rounded-full transition-all duration-300 group-hover:bg-black group-hover:text-white">
+            {selectedBranch === elem.name ? "Selected" : "Select"}
           </button>
         </div>
       </div>
-      <p className='text-center text-sm sm:text-xl font-bold mt-1' >{elem.name}</p>
-      
-      
+      <p className="text-center text-sm sm:text-lg font-semibold mt-2">
+        {elem.name}
+      </p>
     </div>
-    
-  )
-}
+  );
+};
 
-export default Branch
+export default Branch;
