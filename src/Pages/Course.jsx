@@ -48,10 +48,14 @@ const Course = () => {
 
     return (
         <div className='text-white bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen py-10 px-6 sm:px-12'>
-            <h1 className='text-center text-3xl sm:text-4xl text-cyan-400 font-bold mb-10'>Get Your <span className='text-green-400'>{id}</span></h1>
+            <h1 className='text-center text-3xl sm:text-4xl text-cyan-400 font-bold mb-10 font-[Poppins]'>
+                Get Your <span className='text-green-400'>{id}</span>
+            </h1>
             
             <div>
-                <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Branch</h2>
+                <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5 font-[Playfair Display] tracking-wide'>
+                    Select Your Branch
+                </h2>
                 <div className='grid grid-cols-3 gap-6 sm:gap-8'>
                     {branchName.map((elem, index) => (
                         <div key={index} onClick={() => selectBranch(elem)} 
@@ -63,7 +67,9 @@ const Course = () => {
             </div>
 
             <div className='mt-12'>
-                <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Semester</h2>
+                <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5 font-[Playfair Display] tracking-wide'>
+                    Select Your Semester
+                </h2>
                 <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6'>
                     {semesters.map((_, index) => (
                         <div key={index} className='cursor-pointer transition-transform transform hover:scale-105'>
@@ -78,4 +84,4 @@ const Course = () => {
     );
 };
 
-export default Course
+export default Course;
