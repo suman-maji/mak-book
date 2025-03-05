@@ -14,11 +14,11 @@ const Fag = ({ elem }) => {
     };
 
     return (
-        <div className='sm:max-w-[70%] mx-auto p-4'>
+        <div className='sm:max-w-[80%] mx-auto p-4'>
             <a href={elem[id]} className='block'>
                 <div 
                     onClick={setPyq} 
-                    className='text-2xl sm:text-3xl flex justify-between items-center group cursor-pointer rounded-3xl sm:rounded-full bg-indigo-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-lg p-5 sm:p-8 sm:px-10 hover:scale-105 active:scale-95'
+                    className='text-2xl sm:text-3xl flex justify-between items-center group cursor-pointer rounded-3xl sm:rounded-full bg-gradient-to-r from-indigo-600 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-lg p-3 sm:p-5 sm:px-12 hover:scale-105 active:scale-95'
                 >
                     <h2 className='group-hover:ml-4 duration-300 text-lg sm:text-3xl'>{elem.subject ? elem.subject : elem.Ques}</h2>
                     <div className='sm:mr-5 group-hover:rotate-45 duration-300 text-3xl sm:text-6xl'>
