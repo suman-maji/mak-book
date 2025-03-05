@@ -15,7 +15,7 @@ const Faq = ({ elem }) => {
       
       {/* Answer area with a solid indigo background */}
       {open && (
-        <div className="px-6 py-4 bg-indigo-700 text-white">
+        <div className="px-6 py-4 bg-blue-400 text-white">
           {elem.Ans}
         </div>
       )}
