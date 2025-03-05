@@ -57,7 +57,7 @@ const Subject = () => {
             {data.map((elem, ind) => (
               <div
                 key={ind}
-                className="transition transform hover:scale-105 focus:scale-105 duration-200 ease-in-out"
+                className="w-full sm:w-[80%] lg:w-[70%] mx-auto transition transform hover:scale-105 focus:scale-105 duration-200 ease-in-out"
               >
                 <Fag elem={elem} />
               </div>
@@ -83,4 +83,3 @@ const Subject = () => {
 };
 
 export default Subject;
-
