@@ -55,13 +55,16 @@ const Subject = () => {
 
           <div className="space-y-3">
             {data.map((elem, ind) => (
-              <div key={ind} className="">
+              <div
+                key={ind}
+                className="transition transform hover:scale-105 focus:scale-105 duration-200 ease-in-out"
+              >
                 <Fag elem={elem} />
               </div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-8 sm:mt-12 text-center">
             <h1 className="text-2xl sm:text-3xl font-semibold text-indigo-300">
               Thanks for using our website!
             </h1>
@@ -70,7 +73,7 @@ const Subject = () => {
             </h2>
           </div>
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 sm:mt-8 flex justify-center">
             <Social />
           </div>
         </div>
