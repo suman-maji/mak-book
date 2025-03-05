@@ -1,87 +1,86 @@
-import React, { useEffect, useState } from 'react';
-import Branch from '../Component/Cards/Branch';
-import Semester from '../Component/Cards/Semester';
-import { useNavigate, useParams } from 'react-router-dom';
-import cse_img from "../Assets/cse_img.jpg";
-import it_img from "../Assets/it_img.jpg";
-import ece_img from "../Assets/ece_img.jpg";
-import aiml_img from "../Assets/aiml_img.jpg";
-import me_img from "../Assets/mech_img.jpg";
-import civil_img from "../Assets/civil_img.jpg";
-import News from '../Component/News/News';
+import React, { useEffect, useState } from "react";
+import Fag from "../Component/Faqs/Faq";
+import Social from "../Component/Cards/Social";
+import { useParams } from "react-router-dom";
+import UploadedSoon from "../Component/Error/UploadedSoon";
+import Spinner from "../Component/Error/Spinner";
 
-const Course = () => {
-    const [branchRoute, setBranchRoute] = useState("");
-    const [selectedBranch, setSelectedBranch] = useState("");
-    const { id } = useParams();
-    const navigate = useNavigate();
-    
-    const branchName = [
-        { name: "CSE", image: cse_img },
-        { name: "IT", image: it_img },
-        { name: "ECE", image: ece_img },
-        { name: "AIML", image: aiml_img },
-        { name: "ME", image: me_img },
-        { name: "CIVIL", image: civil_img }
-    ];
-    const semesters = [1, 2, 3, 4, 5, 6, 7, 8];
+const Subject = () => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
-    const selectSem = (index) => {
-        if (!branchRoute) {
-            alert("Please select a branch first!");
-        } else {
-            navigate(`${branchRoute}/sem${index + 1}`);
-        }
+  const { semId } = useParams();
+  const { branchId } = useParams();
+  const url = process.env.REACT_APP_API_URL + branchId + `.json`;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const result = await response.json();
+        if (result[semId]?.length !== 0) setData(result[semId]);
+      } catch (err) {
+        setError(err);
+        console.error("Can't fetch the data", err);
+      } finally {
+        setLoading(false);
+      }
     };
+    fetchData();
+    window.scrollTo(0, 0);
+  }, [semId]);
 
-    const selectBranch = (elem) => {
-        setBranchRoute(`/choice/${id}/${elem.name.toLowerCase()}`);
-        setSelectedBranch(elem.name.toUpperCase());
-        window.scrollTo({ top: 500, behavior: "smooth" });
-    };
-
-    useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
-
-    if (id === "news") return <News />;
-
+  if (loading) {
     return (
-        <div className='text-white bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen flex flex-col'>
-            <div className='flex-grow py-10 px-6 sm:px-12'>
-                <h1 className='text-center text-3xl sm:text-4xl text-cyan-400 font-bold mb-10'>Get Your <span className='text-green-400'>{id}</span></h1>
-                
-                <div>
-                    <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Branch</h2>
-                    <div className='grid grid-cols-3 gap-6 sm:gap-8'>
-                        {branchName.map((elem, index) => (
-                            <div key={index} onClick={() => selectBranch(elem)} 
-                                className={`cursor-pointer transition-transform transform hover:scale-110 ${elem.name === selectedBranch ? "opacity-50" : ""}`}>
-                                <Branch elem={elem} selectedBranch={selectedBranch} />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className='mt-8 sm:mt-12'>
-                    <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Semester</h2>
-                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6'>
-                        {semesters.map((_, index) => (
-                            <div key={index} className='cursor-pointer transition-transform transform hover:scale-105'>
-                                <div onClick={() => selectSem(index)}>
-                                    <Semester ind={index} />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-            
-            {/* Ensure footer stays close */}
-            <div className='h-0'></div>
-        </div>
+      <div className="flex justify-center items-center h-screen bg-gray-900">
+        <Spinner />
+      </div>
     );
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-gray-900 to-black text-white px-4 sm:px-8 py-6">
+      {error ? (
+        <div className="text-center text-red-500 text-lg font-semibold">
+          Unable to load data. Please try again later.
+        </div>
+      ) : !data ? (
+        <UploadedSoon />
+      ) : (
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-center mb-6 sm:mb-10 text-indigo-400">
+            Subject List
+          </h1>
+
+          <div className="space-y-6">
+            {data.map((elem, ind) => (
+              <div
+                key={ind}
+                className="bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300 p-6 rounded-xl shadow-lg border border-gray-700"
+              >
+                <Fag elem={elem} />
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <h1 className="text-2xl sm:text-3xl font-semibold text-indigo-300">
+              Thanks for using our website!
+            </h1>
+            <h2 className="mt-2 text-lg text-gray-400">
+              Please share with your friends 💜
+            </h2>
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <Social />
+          </div>
+        </div>
+      )}
+    </div>
+  );
 };
 
-export default Course;
+export default Subject;
 
