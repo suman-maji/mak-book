@@ -35,7 +35,8 @@ const Course = () => {
     };
 
     const selectBranch = (elem) => {
-        setBranchRoute(`/choice/${id}/${elem.name.toLowerCase()}`);
+        const route = `/choice/${id}/${elem.name.toLowerCase()}`;
+        setBranchRoute(route);
         setSelectedBranch(elem.name);
         window.scrollTo({ top: 500, behavior: "smooth" });
     };
