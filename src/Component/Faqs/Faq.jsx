@@ -18,7 +18,7 @@ const Fag = ({ elem }) => {
             <a href={elem[id]} className='block'>
                 <div 
                     onClick={setPyq} 
-                    className='text-lg sm:text-xl flex justify-between items-center group cursor-pointer rounded-3xl sm:rounded-full bg-gradient-to-r from-indigo-600 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-lg p-2 sm:p-3 sm:px-16 hover:scale-105 active:scale-95 font-[Inter,sans-serif] min-h-[50px] sm:min-h-[60px]'
+                    className='text-lg sm:text-xl flex justify-between items-center group cursor-pointer rounded-3xl sm:rounded-full bg-gradient-to-r from-indigo-600 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-lg p-2 sm:p-3 sm:px-16 hover:scale-105 active:scale-95 font-[Inter,sans-serif] min-h-[60px] sm:min-h-[70px]'
                 >
                     <h2 className='group-hover:ml-4 duration-300 text-sm sm:text-xl font-[Poppins,sans-serif]'>{elem.subject ? elem.subject : elem.Ques}</h2>
                     <div className='sm:mr-4 group-hover:rotate-45 duration-300 text-xl sm:text-4xl'>
