@@ -4,9 +4,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mont: ["Rubik", "sans-serif"]
-       },
+        rubik: ["Rubik", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
+      },
     },
   },
-  plugins: [],
 };
