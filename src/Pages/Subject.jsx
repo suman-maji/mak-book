@@ -53,12 +53,9 @@ const Subject = () => {
             Subject List
           </h1>
 
-          <div className="space-y-6">
+          <div className="space-y-3">
             {data.map((elem, ind) => (
-              <div
-                key={ind}
-                className="bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300 p-6 rounded-xl shadow-lg border border-gray-700"
-              >
+              <div key={ind} className="">
                 <Fag elem={elem} />
               </div>
             ))}
@@ -83,4 +80,3 @@ const Subject = () => {
 };
 
 export default Subject;
-
