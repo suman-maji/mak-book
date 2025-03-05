@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const Semester = ({ ind }) => {
   return (
-    <div className="px-6 py-6 sm:py-9 sm:px-9 text-xs sm:text-base font-semibold tracking-wider bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-3xl flex justify-center items-center border border-white shadow-md hover:bg-white hover:text-blue-600 hover:border-blue-600 hover:shadow-lg transition-all duration-300 cursor-pointer">
-      {`SEMESTER-${ind + 1}`}
+    <div className="px-8 py-6 sm:py-10 sm:px-12 text-sm sm:text-lg font-bold tracking-wide uppercase bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-3xl flex justify-center items-center border border-transparent shadow-md hover:bg-white hover:text-blue-600 hover:border-blue-600 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+      {`Semester ${ind + 1}`}
     </div>
   );
 };
