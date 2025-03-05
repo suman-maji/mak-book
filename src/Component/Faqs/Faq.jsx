@@ -28,9 +28,9 @@ const Fag = ({ elem }) => {
             </a>
             
             <div 
-                className={`mx-2 sm:mx-6 mt-1 text-xs opacity-80 sm:text-md overflow-hidden transition-all duration-500 ${click ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                className={`mx-2 sm:mx-6 mt-1 text-sm sm:text-lg opacity-80 sm:text-md overflow-hidden transition-all duration-500 ${click ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
             >
-                {elem.Ans ? elem.Ans : id === "pyq" ? <PyqCard pyqData={pyqData} /> : ""}
+                {elem.Ans ? <p className='text-base sm:text-lg'>{elem.Ans}</p> : id === "pyq" ? <PyqCard pyqData={pyqData} /> : ""}
             </div>
         </div>
     );
