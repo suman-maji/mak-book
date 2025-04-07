@@ -35,8 +35,4 @@ Stay tuned for updates!
 
 We value your feedback! If you have suggestions, encounter issues, or want to contribute, please [create an issue](https://github.com/suman-maji/mak-book/issues).
 
-## License
-
-MAK-Book is licensed under the [MIT License](LICENSE.md) - see the [LICENSE.md](LICENSE.md) file for details.
-
 Happy studying!
