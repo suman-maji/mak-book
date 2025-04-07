@@ -4,15 +4,15 @@ MAKBook is a comprehensive academic resource platform designed to support studen
 
 ## Key Features
 
-- **Latest News:** Stay updated with important announcements and news from Makaut University.
+- **📰 University News:** Stay updated with the latest announcements and notifications from MAKAUT.
 
-- **YouTube Lecture Links:** Access categorized YouTube lecture links based on your semester and branch to enhance your learning experience.
+- **🎥 YouTube Lecture Links:** Access categorized YouTube lecture links based on your semester and branch to enhance your learning experience.
 
-- **Previous Year Questions:** Easily find and download previous year questions, organized by semester, branch, and subject.
+- **📘 Previous Year Questions:** Easily find and download previous year questions, organized by semester, branch, and subject.
 
-- **Semester Exam Organizer:** Get access to curated study materials, resources, and exam preparation tips organized by semester.
+- **🗓️ Exam Organizers:** Get access to curated study materials, resources, and exam preparation tips organized by semester.
 
-## Project Vision
+## 🎯 Project Vision
 
 MAK-Book aims to empower students by providing a consolidated platform that simplifies the process of accessing and managing study resources. Our vision is to contribute to a more efficient and enjoyable learning experience for Makaut University students.
 
