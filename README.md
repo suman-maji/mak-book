@@ -33,7 +33,7 @@ Stay tuned for updates!
 
 ## Feedback
 
-We value your feedback! If you have suggestions, encounter issues, or want to contribute, please [create an issue](https://github.com/PankajKumar1947/snap-study/issues).
+We value your feedback! If you have suggestions, encounter issues, or want to contribute, please [create an issue](https://github.com/suman-maji/mak-book/issues).
 
 ## License
 
