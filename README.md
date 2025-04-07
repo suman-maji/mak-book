@@ -1,6 +1,6 @@
 # MAK-BOOK
 
-MAKBook is your go-to platform for staying informed and well-prepared during your academic journey at Makaut University. This website is tailored to provide students with a centralized hub for essential resources, including the latest university news, YouTube lecture links, previous year questions, and exam organizers. All content is meticulously organized by semester and branch, ensuring a seamless and efficient study experience.
+MAKBook is a comprehensive academic resource platform designed to support students throughout their educational journey at MAKAUT University. It serves as a centralized hub, offering easy access to essential academic materials, including the latest university updates, curated YouTube lecture playlists, previous year question papers, and exam preparation organizers. All resources are systematically categorized by semester and branch, ensuring a streamlined and efficient study experience tailored to each student’s academic needs.
 
 ## Key Features
 
