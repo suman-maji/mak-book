@@ -1,42 +1,43 @@
-# SnapStudy
+MAK-Book
+MAK-Book is a centralized academic support platform designed specifically for students of MAKAUT University. Our mission is to simplify and enhance the learning journey by providing easy access to essential academic resources — all organized efficiently by semester and branch.
 
-SnapStudy is your go-to platform for staying informed and well-prepared during your academic journey at Makaut University. This website is tailored to provide students with a centralized hub for essential resources, including the latest university news, YouTube lecture links, previous year questions, and exam organizers. All content is meticulously organized by semester and branch, ensuring a seamless and efficient study experience.
+🔑 Key Features
+University News
+Stay informed with real-time updates and important announcements from MAKAUT University.
 
-## Key Features
+Curated YouTube Lectures
+Access structured and semester-wise YouTube lecture playlists, curated to complement your coursework and enhance your understanding.
 
-- **Latest News:** Stay updated with important announcements and news from Makaut University.
+Previous Year Question Papers
+Browse and download past examination papers, categorized by semester, branch, and subject — a valuable asset for effective exam preparation.
 
-- **YouTube Lecture Links:** Access categorized YouTube lecture links based on your semester and branch to enhance your learning experience.
+Semester Exam Organizer
+Get organized with streamlined access to study materials, resource links, and strategic exam preparation tips.
 
-- **Previous Year Questions:** Easily find and download previous year questions, organized by semester, branch, and subject.
+🎯 Project Vision
+MAK-Book aims to empower MAKAUT students by offering a unified and intuitive platform that consolidates diverse academic resources. By reducing the friction in finding credible and relevant materials, we aspire to foster a more productive, informed, and stress-free learning experience.
 
-- **Semester Exam Organizer:** Get access to curated study materials, resources, and exam preparation tips organized by semester.
+⚙️ How It Works
+MAK-Book organizes all resources based on the user's semester and branch, allowing for fast, relevant, and hassle-free navigation. The interface is designed with simplicity and functionality in mind, ensuring a smooth user experience from start to finish.
 
-## Project Vision
+🚀 Future Enhancements
+We are committed to the continuous growth of MAK-Book. Planned enhancements include:
 
-SnapStudy aims to empower students by providing a consolidated platform that simplifies the process of accessing and managing study resources. Our vision is to contribute to a more efficient and enjoyable learning experience for Makaut University students.
+Personalized user dashboards
 
-## How SnapStudy Works
+Community discussion forums for peer-to-peer support
 
-SnapStudy categorizes resources based on your semester and branch, allowing you to quickly find relevant content for your courses. The user-friendly interface ensures a hassle-free navigation experience, making SnapStudy an integral part of your academic routine.
+Integration with popular learning management systems
 
-## Future Enhancements
+A dedicated mobile application for seamless access on the go
 
-We are committed to continuous improvement. Future enhancements may include features such as:
+Stay tuned as we evolve!
 
-- Personalized user profiles
-- Discussion forums for collaborative learning
-- Integration with other learning platforms
-- Mobile application for on-the-go access
+💬 Feedback & Contributions
+We highly value user feedback. If you have suggestions, encounter any issues, or are interested in contributing to the platform, please feel free to open an issue or submit a pull request.
 
-Stay tuned for updates!
+📄 License
+This project is licensed under the MIT License. For more details, refer to the LICENSE.md file.
 
-## Feedback
-
-We value your feedback! If you have suggestions, encounter issues, or want to contribute, please [create an issue](https://github.com/PankajKumar1947/snap-study/issues).
-
-## License
-
-SnapStudy is licensed under the [MIT License](LICENSE.md) - see the [LICENSE.md](LICENSE.md) file for details.
-
-Happy studying!
+MAK-Book — Your trusted academic companion at MAKAUT.
+Stay organized. Stay ahead.
