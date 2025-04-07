@@ -1,4 +1,4 @@
-# MAK-BOOK
+# 🎓 MAKBook
 
 MAKBook is a comprehensive academic resource platform designed to support students throughout their educational journey at MAKAUT University. It serves as a centralized hub, offering easy access to essential academic materials, including the latest university updates, curated YouTube lecture playlists, previous year question papers, and exam preparation organizers. All resources are systematically categorized by semester and branch, ensuring a streamlined and efficient study experience tailored to each student’s academic needs.
 
