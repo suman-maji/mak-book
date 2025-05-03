@@ -5,7 +5,7 @@ const News = () => {
     const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 5; // Number of items per page
+    const itemsPerPage = 10; // Number of items per page
 
     useEffect(() => {
         const getData = async () => {
