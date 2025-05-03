@@ -27,12 +27,10 @@ const News = () => {
     }
 
     return (
-        <div className='relative min-h-screen bg-gradient-to-br from-gray-800 via-gray-900 to-black py-10'>
-            <div className='w-[96%] md:w-[80%] mx-auto backdrop-blur-md bg-white/10 border border-white/20 p-6 rounded-2xl text-white shadow-lg'>
-                <h1 className='text-center text-3xl font-semibold mb-6 text-cyan-400'>Latest Notifications</h1>
-                <hr className='border-gray-500 mb-6' />
-
-                <div className='flex flex-col gap-4'>
+        <div className="min-h-screen w-full bg-gradient-to-tr from-[#1f005c] via-[#5b0060] to-[#870160] py-10 px-4">
+            <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-2xl p-6 sm:p-10 text-white">
+                <h1 className="text-center text-4xl font-bold mb-8 text-cyan-300">📢 Latest Notifications</h1>
+                <div className="flex flex-col gap-5">
                     {
                         news.length > 0 && news.map((eachNews) => {
                             const truncatedTitle = eachNews.notice_title.length > 90
@@ -45,8 +43,14 @@ const News = () => {
                                     href={eachNews.file_path}
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    className='p-3 px-5 rounded-full bg-white/20 hover:bg-cyan-500 hover:text-black text-sm sm:text-lg transition-colors duration-200'>
-                                    <span className='text-gray-200 font-semibold'>{eachNews.notice_date}</span> : {truncatedTitle}
+                                    className="flex items-center justify-between bg-white/10 hover:bg-white/20 transition-all duration-300 p-4 rounded-xl backdrop-blur-md shadow hover:scale-[1.02]"
+                                >
+                                    <span className="bg-cyan-600 text-white text-xs sm:text-sm px-3 py-1 rounded-full mr-4">
+                                        {eachNews.notice_date}
+                                    </span>
+                                    <span className="text-sm sm:text-lg text-white font-medium flex-1">
+                                        {truncatedTitle}
+                                    </span>
                                 </a>
                             );
                         })
