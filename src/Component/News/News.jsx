@@ -32,7 +32,7 @@ const News = () => {
                 <h1 className="text-center text-4xl font-bold mb-6 text-cyan-400">
                     📢 Latest Notifications
                 </h1>
-                <div className="flex flex-col gap-3"> {/* Slightly reduced gap */}
+                <div className="flex flex-col gap-2"> {/* Reduced gap here */}
                     {
                         news.length > 0 && news.map((eachNews) => {
                             const truncatedTitle = eachNews.notice_title.length > 90
@@ -45,12 +45,12 @@ const News = () => {
                                     href={eachNews.file_path}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-4 bg-white/10 hover:bg-white/20 transition-all duration-300 p-4 rounded-xl backdrop-blur-md shadow-lg hover:scale-[1.03]"
+                                    className="flex items-center gap-4 bg-white/10 hover:bg-white/20 transition-all duration-300 p-3 rounded-xl backdrop-blur-md shadow hover:scale-[1.01]"
                                 >
                                     <span className="bg-cyan-600 text-white text-xs sm:text-sm px-3 py-1 rounded-full shrink-0">
                                         {eachNews.notice_date}
                                     </span>
-                                    <span className="text-sm sm:text-lg font-semibold text-white">
+                                    <span className="text-sm sm:text-lg font-medium text-white">
                                         {truncatedTitle}
                                     </span>
                                 </a>
