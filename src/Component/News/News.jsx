@@ -27,17 +27,12 @@ const News = () => {
     }
 
     return (
-        <div
-            className="min-h-screen w-full bg-cover bg-center py-10 px-2 sm:px-6"
-            style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-1695653422435-7f8683ac1b5b?auto=format&fit=crop&w=1400&q=80')`,
-            }}
-        >
-            <div className="w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-xl p-4 sm:p-8 text-white">
-                <h1 className="text-center text-4xl font-bold mb-6 text-violet-300">
+        <div className="min-h-screen bg-gradient-to-br from-[#3b1f92] via-[#281c94] to-[#1e1475] py-10 px-2">
+            <div className="w-[96%] md:w-[80%] mx-auto bg-white/10 backdrop-blur-lg border border-white/20 p-6 sm:p-10 rounded-2xl shadow-2xl text-white">
+                <h1 className="text-center text-4xl font-bold mb-8 text-violet-300">
                     📢 Latest Notifications
                 </h1>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-5">
                     {
                         news.length > 0 && news.map((eachNews) => {
                             const truncatedTitle = eachNews.notice_title.length > 90
@@ -48,14 +43,14 @@ const News = () => {
                                 <a
                                     key={eachNews.id}
                                     href={eachNews.file_path}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    className="flex items-center justify-start gap-3 bg-white/10 hover:bg-white/20 transition-all duration-300 p-4 rounded-xl backdrop-blur-md shadow hover:scale-[1.01]"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-4 bg-white/10 hover:bg-white/20 transition-all duration-300 p-4 rounded-xl backdrop-blur-md shadow hover:scale-[1.01]"
                                 >
-                                    <span className="bg-violet-600 text-white text-xs sm:text-sm px-3 py-1 rounded-full">
+                                    <span className="bg-violet-600 text-white text-xs sm:text-sm px-3 py-1 rounded-full shrink-0">
                                         {eachNews.notice_date}
                                     </span>
-                                    <span className="text-sm sm:text-lg text-white font-medium">
+                                    <span className="text-sm sm:text-lg font-medium text-white">
                                         {truncatedTitle}
                                     </span>
                                 </a>
