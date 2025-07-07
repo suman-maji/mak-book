@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Branch from '../Component/Cards/Branch';
 import Semester from '../Component/Cards/Semester';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -15,6 +15,7 @@ const Course = () => {
     const [selectedBranch, setSelectedBranch] = useState("");
     const { id } = useParams();
     const navigate = useNavigate();
+    const semesterRef = useRef(null);
     
     const branchName = [
         { name: "CSE", image: cse_img },
@@ -37,7 +38,7 @@ const Course = () => {
     const selectBranch = (elem) => {
         setBranchRoute(`/choice/${id}/${elem.name.toLowerCase()}`);
         setSelectedBranch(elem.name.toUpperCase());
-        window.scrollTo({ top: 500, behavior: "smooth" });
+        semesterRef.current?.scrollIntoView({ behavior: "smooth" });
     };
 
     useEffect(() => {
@@ -56,7 +57,7 @@ const Course = () => {
                 <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5 font-[Playfair Display] tracking-wide'>
                     Select Your Branch
                 </h2>
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8'>
+                <div className='flex flex-wrap justify-center gap-6 sm:gap-8'>
                     {branchName.map((elem, index) => (
                         <div key={index} onClick={() => selectBranch(elem)} 
                              className={`cursor-pointer transition-transform transform hover:scale-110 ${elem.name === selectedBranch ? "opacity-50" : ""}`}>
@@ -66,11 +67,11 @@ const Course = () => {
                 </div>
             </div>
 
-            <div className='mt-12'>
+            <div className='mt-12' ref={semesterRef}>
                 <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5 font-[Playfair Display] tracking-wide'>
                     Select Your Semester
                 </h2>
-                <div className='max-h-[70vh] overflow-y-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6'>
+                <div className='flex flex-wrap justify-center gap-4 sm:gap-6'>
                     {semesters.map((_, index) => (
                         <div key={index} className='cursor-pointer transition-transform transform hover:scale-105'>
                             <div onClick={() => selectSem(index)}>
