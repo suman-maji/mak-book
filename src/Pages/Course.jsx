@@ -53,25 +53,27 @@ const Course = () => {
                 Get Your <span className='text-green-400'>{id}</span>
             </h1>
             
+            {/* Branch selection */}
             <div>
                 <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5 font-[Playfair Display] tracking-wide'>
                     Select Your Branch
                 </h2>
-                <div className='flex flex-wrap justify-center gap-6 sm:gap-8'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8'>
                     {branchName.map((elem, index) => (
                         <div key={index} onClick={() => selectBranch(elem)} 
-                             className={`cursor-pointer transition-transform transform hover:scale-110 ${elem.name === selectedBranch ? "opacity-50" : ""}`}>
+                             className={`cursor-pointer transition-transform transform hover:scale-105 ${elem.name === selectedBranch ? "opacity-50" : ""}`}>
                             <Branch elem={elem} selectedBranch={selectedBranch} />
                         </div>
                     ))}
                 </div>
             </div>
 
+            {/* Semester selection */}
             <div className='mt-12' ref={semesterRef}>
                 <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5 font-[Playfair Display] tracking-wide'>
                     Select Your Semester
                 </h2>
-                <div className='flex flex-wrap justify-center gap-4 sm:gap-6'>
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6'>
                     {semesters.map((_, index) => (
                         <div key={index} className='cursor-pointer transition-transform transform hover:scale-105'>
                             <div onClick={() => selectSem(index)}>
