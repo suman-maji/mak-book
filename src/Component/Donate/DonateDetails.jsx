@@ -4,8 +4,8 @@ import { FaYoutube, FaFilePdf, FaBug } from 'react-icons/fa';
 const Section = ({ icon, title, description, guidelines, children }) => (
   <section className="p-6 bg-gray-900 rounded-2xl shadow-md border border-gray-700">
     <header className="flex items-center gap-3 mb-4">
-      <span className="font-rubik text-cyan-400 text-2xl sm:text-4xl font-extrabold">{icon}</span>
-      <h1 className="font-orbitron text-cyan-300 font-extrabold text-xl sm:text-3xl">
+      <span className="text-cyan-400 text-2xl sm:text-4xl">{icon}</span>
+      <h1 className="font-rubik text-cyan-400 text-2xl sm:text-4xl font-extrabold">
         {title}
       </h1>
     </header>
