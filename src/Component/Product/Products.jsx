@@ -11,7 +11,7 @@ const Products = () => {
         },
         {
             route: "playlist",
-            title: "Chapterwise Video Playlist",
+            title: "Chapterwise Playlist",
             desc: "Access curated video lectures for each chapter in one convenient playlist."
         },
         {
