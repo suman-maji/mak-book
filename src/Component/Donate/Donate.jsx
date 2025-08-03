@@ -16,17 +16,17 @@ const Donate = () => {
         <h1 className='font-[Playfair] text-4xl sm:text-5xl font-semibold sm:my-6 leading-tight'>
           Join Our Community & Make a Difference
         </h1>
-        <p className='w-[95%] sm:w-[80%] my-4 text-lg font-light'>
+        <p className='w-[95%] sm:w-[80%] my-5 text-xl font-light'>
           Help us expand our resources and create a vast library accessible to all students.
         </p>
 
         {/* Donate Button */}
         <NavLink 
           to={'/donate'}
-          className="hover:bg-white hover:text-gray-900 bg-indigo-600 text-white font-medium mt-6 px-5 py-3 sm:px-8 sm:py-4 rounded-full duration-300 flex gap-2 hover:gap-4 items-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+          className="hover:bg-white hover:text-gray-900 bg-indigo-600 text-white text-lg font-medium mt-6 px-6 py-4 sm:px-10 sm:py-5 rounded-full duration-300 flex gap-2 hover:gap-4 items-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
         >
           <h1>Donate Now</h1>
-          <MdKeyboardDoubleArrowRight size={24} />
+          <MdKeyboardDoubleArrowRight size={26} />
         </NavLink>
       </div>
 
