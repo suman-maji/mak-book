@@ -22,12 +22,13 @@ const Donate = () => {
 
         {/* Donate Button */}
         <NavLink 
-          to={'/donate'}
-          className="hover:bg-white hover:text-gray-900 bg-indigo-600 text-white text-lg font-medium mt-6 px-6 py-4 sm:px-10 sm:py-5 rounded-full duration-300 flex gap-2 hover:gap-4 items-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+           to={'/donate'}
+           className="hover:bg-white hover:text-gray-900 bg-indigo-600 text-white text-lg font-medium mt-6 px-6 py-4 sm:px-10 sm:py-5 rounded-full duration-300 flex gap-2 hover:gap-4 items-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
         >
-          <h1>Donate Now</h1>
+          <h1 className="text-xl">Donate Now</h1>
           <MdKeyboardDoubleArrowRight size={26} />
         </NavLink>
+
       </div>
 
       {/* Image Section */}
