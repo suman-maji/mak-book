@@ -29,7 +29,10 @@ const Hero = () => {
           Explore the Latest <span className="text-blue-400">MAKAUT Study Material</span>
         </h1>
 
-        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold my-4 text-white drop-shadow-md animate-fadeInSlow">
+        <h2
+          className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold my-4 text-white drop-shadow-md animate-fadeInSlow"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
           Organized with Ease
         </h2>
 
