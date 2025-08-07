@@ -7,7 +7,6 @@ module.exports = {
         rubik: ["Rubik", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         playfair: ["Playfair Display", "serif"],
-        cormorant: ['Cormorant', 'serif'],
       },
     },
   },
