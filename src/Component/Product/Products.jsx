@@ -39,7 +39,7 @@ const Products = () => {
             </div>
 
             <div className='relative z-10 text-center'>
-                <h1 className='font-cormorant text-5xl font-bold mb-4 text-white drop-shadow-md'>Main Highlights</h1>
+                <h1 className='font-playfair text-5xl font-bold mb-4 text-white drop-shadow-md'>Main Highlights</h1>
                 <p className='text-lg sm:text-xl font-light text-gray-300 max-w-3xl mx-auto mb-12'>Explore our key features and elevate your learning experience.</p>
             </div>
 
