@@ -1,16 +1,13 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // <-- Important: enables class-based dark mode
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}', // adjust based on your project structure
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        rubik: ['Rubik', 'sans-serif'], // Optional if you're using the Rubik font
+        rubik: ["Rubik", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
       },
     },
   },
-  plugins: [],
-}
+};
