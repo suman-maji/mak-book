@@ -21,7 +21,7 @@ const Products = () => {
         },
         {
             route: "pyq",
-            title: "Yearwise Subject PYQ",
+            title: "Subjectwise PYQ",
             desc: "Boost your preparation with past year question papers categorized by subject."
         },
     ];
