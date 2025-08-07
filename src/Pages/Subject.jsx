@@ -49,7 +49,7 @@ const Subject = () => {
         <UploadedSoon />
       ) : (
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-center mb-6 sm:mb-10 text-indigo-400">
+          <h1 className="font-playfair text-4xl sm:text-6xl font-extrabold text-center mb-6 sm:mb-10 text-indigo-400">
             Subject List
           </h1>
 
