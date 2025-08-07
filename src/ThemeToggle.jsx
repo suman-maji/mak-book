@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ size = "small" }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -24,12 +24,16 @@ export default function ThemeToggle() {
     document.documentElement.classList.toggle("dark");
   };
 
+  const baseClasses = size === "large"
+    ? "p-4 rounded-lg text-3xl"
+    : "p-2 rounded-full text-xl";
+
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-4 right-4 z-50 p-2 rounded-full shadow-md 
-                 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-yellow-300 
-                 hover:scale-105 transition-transform duration-300"
+      className={`transition-all duration-300 shadow-md 
+                  bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-yellow-300 
+                  hover:scale-105 ${baseClasses}`}
       title="Toggle Theme"
     >
       {isDark ? (
