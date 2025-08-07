@@ -10,9 +10,15 @@ import Contact from "./Component/Contact/Contact";
 import Services from "./Pages/Services";
 import DonateDetails from "./Component/Donate/DonateDetails";
 
+// ⬇️ Import the ThemeToggle component
+import ThemeToggle from "./ThemeToggle";
+
 function App() {
   return (
     <>
+      {/* Theme toggle is global, always visible */}
+      <ThemeToggle />
+
       <div className="bg-gray-800 font-mont">
         <BrowserRouter>
           <Helmet>
@@ -39,3 +45,4 @@ function App() {
 }
 
 export default App;
+
